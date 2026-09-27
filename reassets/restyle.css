@@ -1,16 +1,16 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html, body {
+html {
   width: 100%;
   height: 100%;
-  overflow: hidden;
 }
 
 body {
+  width: 100%;
+  min-height: 100%;
   background: #000;
   color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   background-image: url('bckgrnd.png');
@@ -18,6 +18,11 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh;
 }
 
 @keyframes waveIn {
@@ -192,13 +197,91 @@ body {
 
 .footer a:hover { color: #ddd; }
 
+.article-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 24px 80px;
+  max-width: 640px;
+  margin: 0 auto;
+  width: 100%;
+  opacity: 0;
+  will-change: transform, opacity, filter;
+  animation: waveIn 2.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.2s;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 40px;
+  text-decoration: none;
+  transition: color .15s ease;
+}
+
+.back:hover {
+  color: #fff;
+}
+
+.article-title {
+  font-size: clamp(26px, 5vw, 34px);
+  font-weight: 600;
+  letter-spacing: -1px;
+  color: #fff;
+  margin-bottom: 6px;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+.article-updated {
+  font-size: 12.5px;
+  color: #666;
+  margin-bottom: 44px;
+  letter-spacing: 0.02em;
+}
+
+.article {
+  width: 100%;
+}
+
+.article-lead {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #b8b8be;
+  margin-bottom: 44px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.article-card {
+  margin-bottom: 36px;
+}
+
+.article-card h2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 8px;
+  letter-spacing: -0.2px;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+.article-card p {
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: #999;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .topbar,
   .logo-row,
   .tagline,
   .buttons,
   .footer,
-  .logo-row img {
+  .logo-row img,
+  .article-wrap {
     animation: none;
     opacity: 1;
     transform: none;
@@ -214,4 +297,8 @@ body {
   .tagline { font-size: 13px; }
   .topbar { padding: 16px 20px; }
   .topbar img { height: 22px; }
+
+  .article-wrap { padding: 16px 20px 60px; }
+  .article-card { margin-bottom: 28px; }
+  .article-lead { margin-bottom: 32px; }
 }
