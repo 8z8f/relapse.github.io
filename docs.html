@@ -3,51 +3,291 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Relapse - The best </title>
-   <link rel="stylesheet" href="reassets/restyle.css">
+  <title>Documentation — Relapse</title>
+  <link rel="stylesheet" href="reassets/restyle.css">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Relapse">
   <meta property="og:title" content="Relapse — The best">
   <meta property="og:description" content="Relapse gives Lua programmers and scripters a powerful, reliable environment for executing and testing their scripts, while delivering exceptional performance">
   <meta property="og:image" content="https://getrelapse.xyz/reassets/relapse2.svg">
   <meta property="og:url" content="https://getrelapse.xyz/
-  <base target="_blank">
 </head>
 <body>
 
   <div class="topbar">
     <img src="reassets/relapse2.svg" alt="Relapse logo">
-   <!-- <a class="login-btn" href="#">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="#888"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-      Login
-    </a> -->
+    <div class="docs-topsearch">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+      <input type="text" id="docsSearch" placeholder="Search documentation" autocomplete="off" spellcheck="false">
+      <kbd>Ctrl K</kbd>
+      <div class="docs-results" id="docsResults"></div>
+    </div>
   </div>
 
-  <div class="hero">
-    <div class="logo-row">
-      <img src="reassets/relapse2.svg" alt="Relapse logo">
-    </div>
+  <div class="docs-layout">
 
-    <p class="tagline">
-    Relapse gives Lua programmers and scripters a powerful, reliable environment for 
-    executing and testing their scripts, while delivering exceptional performance and
-    maximum sUNC compatibility.
-    </p>
+    <aside class="docs-side">
+      <div class="docs-side-group">
+        <h3>Start</h3>
+        <a class="docs-side-link current" data-doc="introduction" href="#introduction">Introduction</a>
+      </div>
+      <div class="docs-side-group">
+        <h3>sUNC Reference</h3>
+        <a class="docs-side-link" data-doc="closures" href="#closures">Closures</a>
+        <a class="docs-side-link" data-doc="debug" href="#debug">Debug</a>
+        <a class="docs-side-link" data-doc="drawing" href="#drawing">Drawing</a>
+        <a class="docs-side-link" data-doc="encoding" href="#encoding">Encoding</a>
+        <a class="docs-side-link" data-doc="environment" href="#environment">Environment</a>
+        <a class="docs-side-link" data-doc="filesystem" href="#filesystem">Filesystem</a>
+        <a class="docs-side-link" data-doc="instances" href="#instances">Instances</a>
+        <a class="docs-side-link" data-doc="metatable" href="#metatable">Metatable</a>
+        <a class="docs-side-link" data-doc="miscellaneous" href="#miscellaneous">Miscellaneous</a>
+        <a class="docs-side-link" data-doc="reflection" href="#reflection">Reflection</a>
+        <a class="docs-side-link" data-doc="scripts" href="#scripts">Scripts</a>
+        <a class="docs-side-link" data-doc="signals" href="#signals">Signals</a>
+        <a class="docs-side-link" data-doc="websocket" href="#websocket">WebSocket</a>
+      </div>
+    </aside>
 
-    <div class="buttons">
-      <a class="btn" href="https://get-relapse.mysellauth.com/product/relapse-key" target="_blank">
-        <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.49 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
-        Purchase
-      </a>
-      <a class="btn" href="/docs.html" target="_blank">
-        <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
-        Documentation
-      </a>
-      <a class="btn" href="https://discord.gg/FCsgD7P6dp" target="_blank">
-        <svg viewBox="0 0 24 24"><path d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"/></svg>
-        Discord
-      </a>
-    </div>
+    <main class="docs-main">
+
+      <section id="introduction" class="docs-section active">
+        <h1 class="docs-title">sUNC Documentation</h1>
+        <p class="docs-lead">
+          Relapse's API reference is related to and based exclusively on the official sUNC documentation.
+        </p>
+
+        <div class="docs-note">
+          <h3>Official sUNC source</h3>
+          <p>Only APIs documented and actively tested by sUNC are listed here. The canonical reference is <a href="https://docs.sunc.su" target="_blank">docs.sunc.su</a>.</p>
+        </div>
+
+        <h2 class="docs-h2">Explore the sUNC reference</h2>
+        <p class="docs-p">Browse the official sUNC surface or press <kbd>Ctrl</kbd> <kbd>K</kbd> to find a function.</p>
+      </section>
+
+      <section id="closures" class="docs-section">
+        <p class="docs-breadcrumb"><span>sUNC Reference</span><span class="sep">/</span><span>Closures</span></p>
+        <h2 class="docs-title-sm">Closures</h2>
+        <p class="docs-lead">Inspect, create, classify, hook and restore Luau closures.</p>
+
+        <div class="docs-note">
+          <h3>Related to sUNC documentation</h3>
+          <p>This reference is based exclusively on the official <a href="https://docs.sunc.su" target="_blank">sUNC documentation</a>.</p>
+        </div>
+
+        <h3 class="docs-h3">Available functions</h3>
+        <div class="docs-functions" data-category="closures"></div>
+      </section>
+
+      <section id="debug" class="docs-section">
+        <p class="docs-breadcrumb"><span>sUNC Reference</span><span class="sep">/</span><span>Debug</span></p>
+        <h2 class="docs-title-sm">Debug</h2>
+        <p class="docs-lead">Inspect and modify constants, upvalues, stacks and prototypes.</p>
+
+        <div class="docs-note">
+          <h3>Related to sUNC documentation</h3>
+          <p>This reference is based exclusively on the official <a href="https://docs.sunc.su" target="_blank">sUNC documentation</a>.</p>
+        </div>
+
+        <h3 class="docs-h3">Available functions</h3>
+        <div class="docs-functions" data-category="debug"></div>
+      </section>
+
+      <section id="drawing" class="docs-section">
+        <p class="docs-breadcrumb"><span>sUNC Reference</span><span class="sep">/</span><span>Drawing</span></p>
+        <h2 class="docs-title-sm">Drawing</h2>
+        <p class="docs-lead">Create and manage client-only 2D drawing objects.</p>
+
+        <div class="docs-note">
+          <h3>Related to sUNC documentation</h3>
+          <p>This reference is based exclusively on the official <a href="https://docs.sunc.su" target="_blank">sUNC documentation</a>.</p>
+        </div>
+
+        <h3 class="docs-h3">Available functions</h3>
+        <div class="docs-functions" data-category="drawing"></div>
+      </section>
+
+      <section id="encoding" class="docs-section">
+        <p class="docs-breadcrumb"><span>sUNC Reference</span><span class="sep">/</span><span>Encoding</span></p>
+        <h2 class="docs-title-sm">Encoding</h2>
+        <p class="docs-lead">Encode Base64 data and compress or decompress LZ4 data.</p>
+
+        <div class="docs-note">
+          <h3>Related to sUNC documentation</h3>
+          <p>This reference is based exclusively on the official <a href="https://docs.sunc.su" target="_blank">sUNC documentation</a>.</p>
+        </div>
+
+        <h3 class="docs-h3">Available functions</h3>
+        <div class="docs-functions" data-category="encoding"></div>
+      </section>
+
+      <section id="environment" class="docs-section">
+        <p class="docs-breadcrumb"><span>sUNC Reference</span><span class="sep">/</span><span>Environment</span></p>
+        <h2 class="docs-title-sm">Environment</h2>
+        <p class="docs-lead">Inspect executor environments, the registry and garbage-collected values.</p>
+
+        <div class="docs-note">
+          <h3>Related to sUNC documentation</h3>
+          <p>This reference is based exclusively on the official <a href="https://docs.sunc.su" target="_blank">sUNC documentation</a>.</p>
+        </div>
+
+        <h3 class="docs-h3">Available functions</h3>
+        <div class="docs-functions" data-category="environment"></div>
+      </section>
+
+      <section id="filesystem" class="docs-section">
+        <p class="docs-breadcrumb"><span>sUNC Reference</span><span class="sep">/</span><span>Filesystem</span></p>
+        <h2 class="docs-title-sm">Filesystem</h2>
+        <p class="docs-lead">Read, write and organize files in the executor workspace.</p>
+
+        <div class="docs-note">
+          <h3>Related to sUNC documentation</h3>
+          <p>This reference is based exclusively on the official <a href="https://docs.sunc.su" target="_blank">sUNC documentation</a>.</p>
+        </div>
+
+        <h3 class="docs-h3">Available functions</h3>
+        <div class="docs-functions" data-category="filesystem"></div>
+      </section>
+
+      <section id="instances" class="docs-section">
+        <p class="docs-breadcrumb"><span>sUNC Reference</span><span class="sep">/</span><span>Instances</span></p>
+        <h2 class="docs-title-sm">Instances</h2>
+        <p class="docs-lead">Enumerate, reference, inspect and interact with Roblox Instances.</p>
+
+        <div class="docs-note">
+          <h3>Related to sUNC documentation</h3>
+          <p>This reference is based exclusively on the official <a href="https://docs.sunc.su" target="_blank">sUNC documentation</a>.</p>
+        </div>
+
+        <h3 class="docs-h3">Available functions</h3>
+        <div class="docs-functions" data-category="instances"></div>
+      </section>
+
+      <section id="metatable" class="docs-section">
+        <p class="docs-breadcrumb"><span>sUNC Reference</span><span class="sep">/</span><span>Metatable</span></p>
+        <h2 class="docs-title-sm">Metatable</h2>
+        <p class="docs-lead">Access, replace and inspect protected metatables.</p>
+
+        <div class="docs-note">
+          <h3>Related to sUNC documentation</h3>
+          <p>This reference is based exclusively on the official <a href="https://docs.sunc.su" target="_blank">sUNC documentation</a>.</p>
+        </div>
+
+        <h3 class="docs-h3">Available functions</h3>
+        <div class="docs-functions" data-category="metatable"></div>
+      </section>
+
+      <section id="miscellaneous" class="docs-section">
+        <p class="docs-breadcrumb"><span>sUNC Reference</span><span class="sep">/</span><span>Miscellaneous</span></p>
+        <h2 class="docs-title-sm">Miscellaneous</h2>
+        <p class="docs-lead">Utility functions that don't belong to a specific category.</p>
+
+        <div class="docs-note">
+          <h3>Related to sUNC documentation</h3>
+          <p>This reference is based exclusively on the official <a href="https://docs.sunc.su" target="_blank">sUNC documentation</a>.</p>
+        </div>
+
+        <h3 class="docs-h3">Available functions</h3>
+        <div class="docs-functions" data-category="miscellaneous"></div>
+      </section>
+
+      <section id="reflection" class="docs-section">
+        <p class="docs-breadcrumb"><span>sUNC Reference</span><span class="sep">/</span><span>Reflection</span></p>
+        <h2 class="docs-title-sm">Reflection</h2>
+        <p class="docs-lead">Reflect on functions, types and runtime state.</p>
+
+        <div class="docs-note">
+          <h3>Related to sUNC documentation</h3>
+          <p>This reference is based exclusively on the official <a href="https://docs.sunc.su" target="_blank">sUNC documentation</a>.</p>
+        </div>
+
+        <h3 class="docs-h3">Available functions</h3>
+        <div class="docs-functions" data-category="reflection"></div>
+      </section>
+
+      <section id="scripts" class="docs-section">
+        <p class="docs-breadcrumb"><span>sUNC Reference</span><span class="sep">/</span><span>Scripts</span></p>
+        <h2 class="docs-title-sm">Scripts</h2>
+        <p class="docs-lead">Manage, load and inspect running scripts.</p>
+
+        <div class="docs-note">
+          <h3>Related to sUNC documentation</h3>
+          <p>This reference is based exclusively on the official <a href="https://docs.sunc.su" target="_blank">sUNC documentation</a>.</p>
+        </div>
+
+        <h3 class="docs-h3">Available functions</h3>
+        <div class="docs-functions" data-category="scripts"></div>
+      </section>
+
+      <section id="signals" class="docs-section">
+        <p class="docs-breadcrumb"><span>sUNC Reference</span><span class="sep">/</span><span>Signals</span></p>
+        <h2 class="docs-title-sm">Signals</h2>
+        <p class="docs-lead">Hook and inspect Roblox signals and event connections.</p>
+
+        <div class="docs-note">
+          <h3>Related to sUNC documentation</h3>
+          <p>This reference is based exclusively on the official <a href="https://docs.sunc.su" target="_blank">sUNC documentation</a>.</p>
+        </div>
+
+        <h3 class="docs-h3">Available functions</h3>
+        <div class="docs-functions" data-category="signals"></div>
+      </section>
+
+      <section id="websocket" class="docs-section">
+        <p class="docs-breadcrumb"><span>sUNC Reference</span><span class="sep">/</span><span>WebSocket</span></p>
+        <h2 class="docs-title-sm">WebSocket</h2>
+        <p class="docs-lead">Open, send and receive data over WebSocket connections.</p>
+
+        <div class="docs-note">
+          <h3>Related to sUNC documentation</h3>
+          <p>This reference is based exclusively on the official <a href="https://docs.sunc.su" target="_blank">sUNC documentation</a>.</p>
+        </div>
+
+        <h3 class="docs-h3">Available functions</h3>
+        <div class="docs-functions" data-category="websocket"></div>
+      </section>
+
+      <section id="function-view" class="docs-section">
+        <p class="docs-breadcrumb" id="fnBreadcrumb"></p>
+        <p class="docs-category-label" id="fnCategory"></p>
+        <h2 class="docs-fn-title" id="fnTitle"></h2>
+        <p class="docs-lead" id="fnDesc"></p>
+
+        <div class="docs-note">
+          <h3>Related to sUNC documentation</h3>
+          <p>This page follows the official <a href="https://docs.sunc.su" target="_blank">sUNC reference</a>.</p>
+        </div>
+
+        <h3 class="docs-h2">Signature</h3>
+        <div class="docs-code">
+          <div class="docs-code-head">
+            <span class="docs-code-lang">Luau</span>
+            <button class="docs-copy" data-copy="" type="button" aria-label="Copy signature">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+              <span>Copy</span>
+            </button>
+          </div>
+          <pre class="docs-code-body"><code id="fnSignature"></code></pre>
+        </div>
+
+        <h3 class="docs-h2">Returns</h3>
+        <p class="docs-p" id="fnReturns"></p>
+
+        <div class="docs-nav">
+          <a class="docs-nav-btn" id="fnPrev" href="#">
+            <span class="docs-nav-label">← Previous</span>
+            <span class="docs-nav-title" id="fnPrevTitle"></span>
+          </a>
+          <a class="docs-nav-btn docs-nav-next" id="fnNext" href="#">
+            <span class="docs-nav-label">Next →</span>
+            <span class="docs-nav-title" id="fnNextTitle"></span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
   </div>
 
 <div class="footer">
@@ -58,6 +298,8 @@
   <a href="#">Status</a>
   <a class="credit" href="https://waddles.cafe" target="_blank" rel="noopener">Designed by waddle</a>
 </div>
+
+<script src="reassets/rejs.js"></script>
 
 </body>
 </html>
