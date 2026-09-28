@@ -113,7 +113,7 @@
           fns: [
             ['identifyexecutor', 'Returns the executor\'s name and version.', 'function identifyexecutor(): string, string', 'The executor name and version.'],
             ['request', 'Sends an HTTP request from the executor.', 'function request(options: { [any]: any }): { [any]: any }', 'The response object.'],
-            ['settimescale', 'Sets the engine\'s secondsPerStep to speed up physics locally — an undetectable walkspeed or carspeed for most games.', 'function settimescale(scale: number): ()', 'Nothing.'],
+            ['settimescale', 'Sets the engine\'s secondsPerStep to speed up physics locally.', 'function settimescale(scale: number): ()', 'Nothing.'],
           ]
         },
         reflection: {
