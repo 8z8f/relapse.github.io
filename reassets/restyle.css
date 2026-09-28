@@ -59,10 +59,6 @@ body.no-scroll {
 .topbar img {
   height: 28px;
   width: auto;
-  opacity: 0;
-  will-change: transform, opacity, filter;
-  animation: waveIn 2.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  animation-delay: 0.05s;
 }
 
 .login-btn {
@@ -78,10 +74,6 @@ body.no-scroll {
   cursor: pointer;
   text-decoration: none;
   transition: background 0.15s;
-  opacity: 0;
-  will-change: transform, opacity, filter;
-  animation: waveIn 2.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  animation-delay: 0.15s;
 }
 
 .login-btn:hover { background: #1a1a1a; }
@@ -186,6 +178,10 @@ body.no-scroll {
   gap: 28px;
   padding: 28px 20px;
   background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+  opacity: 0;
+  will-change: transform, opacity, filter;
+  animation: waveIn 2.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.8s;
 }
 
 .footer a {
@@ -193,19 +189,10 @@ body.no-scroll {
   font-size: 13px;
   text-decoration: none;
   transition: color 0.2s ease;
-  opacity: 0;
-  will-change: transform, opacity, filter;
-  animation: waveIn 2.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-.footer a:nth-child(1) { animation-delay: 0.8s; }
-.footer a:nth-child(2) { animation-delay: 0.85s; }
-.footer a:nth-child(3) { animation-delay: 0.9s; }
-.footer a:nth-child(4) { animation-delay: 0.95s; }
-.footer a:nth-child(5) { animation-delay: 1s; }
-.footer a:nth-child(6) { animation-delay: 1.05s; }
-
 .footer a:hover { color: #ddd; }
+
 
 .footer .credit {
   display: inline-flex;
@@ -232,6 +219,10 @@ body.no-scroll {
   max-width: 640px;
   margin: 0 auto;
   width: 100%;
+  opacity: 0;
+  will-change: transform, opacity, filter;
+  animation: waveIn 2.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.2s;
 }
 
 .back {
@@ -243,10 +234,6 @@ body.no-scroll {
   margin-bottom: 40px;
   text-decoration: none;
   transition: color .15s ease;
-  opacity: 0;
-  will-change: transform, opacity, filter;
-  animation: waveIn 2.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  animation-delay: 0.1s;
 }
 
 .back:hover {
@@ -260,10 +247,6 @@ body.no-scroll {
   color: #fff;
   margin-bottom: 6px;
   text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
-  opacity: 0;
-  will-change: transform, opacity, filter;
-  animation: waveIn 2.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  animation-delay: 0.2s;
 }
 
 .article-updated {
@@ -271,18 +254,10 @@ body.no-scroll {
   color: #666;
   margin-bottom: 44px;
   letter-spacing: 0.02em;
-  opacity: 0;
-  will-change: transform, opacity, filter;
-  animation: waveIn 2.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  animation-delay: 0.3s;
 }
 
 .article {
   width: 100%;
-  opacity: 0;
-  will-change: transform, opacity, filter;
-  animation: waveIn 2.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  animation-delay: 0.4s;
 }
 
 .article-lead {
@@ -314,18 +289,13 @@ body.no-scroll {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .topbar img,
-  .login-btn,
+  .topbar,
   .logo-row,
   .tagline,
   .buttons,
-  .footer a,
-  .back,
-  .article-title,
-  .article-updated,
-  .article,
-  .docs-side,
-  .docs-section.active {
+  .footer,
+  .logo-row img,
+  .article-wrap {
     animation: none;
     opacity: 1;
     transform: none;
@@ -474,6 +444,10 @@ body.no-scroll {
   width: 100%;
   margin: 0 auto;
   padding: 20px 40px 80px;
+  opacity: 0;
+  will-change: transform, opacity, filter;
+  animation: waveIn 2.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.2s;
 }
 
 .docs-side {
@@ -488,10 +462,6 @@ body.no-scroll {
   padding-right: 8px;
   scrollbar-width: thin;
   scrollbar-color: #2a2a2a transparent;
-  opacity: 0;
-  will-change: transform, opacity, filter;
-  animation: waveIn 2.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  animation-delay: 0.2s;
 }
 
 .docs-side::-webkit-scrollbar { width: 4px; }
@@ -524,7 +494,7 @@ body.no-scroll {
 
 .docs-main { min-width: 0; }
 
-.docs-section { display: none; }
+.docs-section { display: none; opacity: 0; will-change: transform, opacity, filter; }
 
 .docs-section.active {
   display: block;
@@ -762,10 +732,9 @@ body.no-scroll {
   overflow-x: auto;
   font-family: ui-monospace, "SF Mono", Menlo, monospace;
   font-size: 12.5px;
-  line-height: 1.9;
+  line-height: 1.7;
   color: #c8c8ce;
-  white-space: pre-wrap;
-  word-break: break-word;
+  white-space: pre;
 }
 
 .docs-code-body code {
@@ -840,3 +809,4 @@ body.no-scroll {
   .docs-topsearch { min-width: 0; flex: 1; }
   .docs-topsearch input { font-size: 12px; }
 }
+
