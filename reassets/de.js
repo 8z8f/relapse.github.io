@@ -1,4 +1,6 @@
 (function () {
+      if (!document.getElementById('docsSearch')) return;
+
       var data = {
         closures: {
           title: 'Closures',
@@ -375,3 +377,59 @@
         show('introduction', false);
       }
     })();
+
+(function () {
+  var list = document.getElementById('statusList');
+  if (!list) return;
+
+  var states = {
+    up:          { label: 'Up',          title: 'All systems operational',  text: 'Everything is running normally.' },
+    internal:    { label: 'Internal',    title: 'Internal testing',         text: 'Some services are only available to the internal team right now.' },
+    maintenance: { label: 'Maintenance', title: 'Scheduled maintenance',    text: 'Some services are down for planned work.' },
+    degraded:    { label: 'Degraded',    title: 'Degraded performance',     text: 'Some services are slower or less reliable than usual.' },
+    down:        { label: 'Down',        title: 'Service outage',           text: 'Some services are currently unavailable.' }
+  };
+
+  var severity = ['up', 'internal', 'maintenance', 'degraded', 'down'];
+
+  var services = [
+    { name: 'Executor',      desc: 'Script execution and injection',   state: 'internal' },
+    { name: 'Key System',    desc: 'License keys and activation',      state: 'up' },
+    { name: 'Purchasing',    desc: 'Checkout through SellAuth',        state: 'up' },
+    { name: 'Documentation', desc: 'sUNC reference and guides',        state: 'up' }
+  ];
+
+  function stateText(state) {
+    return '<span class="status-state">' + states[state].label + '</span>';
+  }
+
+  var worst = services.reduce(function (acc, s) {
+    return severity.indexOf(s.state) > severity.indexOf(acc) ? s.state : acc;
+  }, 'up');
+
+  var affected = services.filter(function (s) { return s.state === worst; }).map(function (s) { return s.name; });
+
+  var overall = document.getElementById('statusOverall');
+  overall.classList.add('status-' + worst);
+  document.getElementById('statusOverallTitle').textContent = states[worst].title;
+  document.getElementById('statusOverallText').textContent = worst === 'up'
+    ? states.up.text
+    : states[worst].text + ' Affected: ' + affected.join(', ') + '.';
+
+  services.forEach(function (s, i) {
+    var row = document.createElement('div');
+    row.className = 'status-row status-' + s.state;
+    row.style.animationDelay = (0.5 + i * 0.06) + 's';
+    row.innerHTML = '<span class="status-dot"></span>' +
+                    '<div><span class="status-name">' + s.name + '</span><span class="status-desc">' + s.desc + '</span></div>' +
+                    stateText(s.state);
+    list.appendChild(row);
+  });
+
+  var checked = document.getElementById('statusChecked');
+  function tick() {
+    checked.textContent = 'Last checked ' + new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+  }
+  tick();
+  setInterval(tick, 30000);
+})();
