@@ -857,7 +857,6 @@ body.no-scroll {
 .status-overall {
   display: flex;
   align-items: center;
-  gap: 14px;
   background: rgba(17, 17, 17, 0.7);
   border: 1px solid #262626;
   border-radius: 8px;
@@ -882,14 +881,6 @@ body.no-scroll {
   color: #999;
 }
 
-.status-dot {
-  flex-shrink: 0;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #666;
-}
-
 .status-label {
   margin-bottom: 12px;
   opacity: 0;
@@ -905,7 +896,7 @@ body.no-scroll {
 
 .status-row {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr);
   align-items: center;
   gap: 14px;
   background: #0d0d0f;
@@ -936,20 +927,6 @@ body.no-scroll {
   margin-top: 2px;
 }
 
-.status-state {
-  font-size: 12px;
-  color: #8a8a90;
-  white-space: nowrap;
-}
-
-.status-up .status-dot { background: #d8d8dc; }
-.status-up .status-state { color: #d8d8dc; }
-
-.status-internal .status-dot { background: #8a8a90; }
-
-.status-down .status-dot { background: #333; }
-.status-down .status-state { color: #555; }
-
 @media (prefers-reduced-motion: reduce) {
   .status-overall,
   .status-label,
@@ -962,15 +939,5 @@ body.no-scroll {
 }
 
 @media (max-width: 640px) {
-  .status-row {
-    grid-template-columns: auto minmax(0, 1fr);
-    gap: 10px 12px;
-  }
-
-  .status-row .status-state {
-    grid-column: 2;
-    justify-self: start;
-  }
-
   .status-overall { padding: 14px 16px; }
 }
