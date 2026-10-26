@@ -48,6 +48,19 @@
         <a class="docs-side-link" data-doc="signals" href="#signals">Signals</a>
         <a class="docs-side-link" data-doc="websocket" href="#websocket">WebSocket</a>
       </div>
+      <div class="docs-side-group">
+        <h3>Relapse</h3>
+        <a class="docs-side-link" data-doc="actors" href="#actors">Actors</a>
+        <a class="docs-side-link" data-doc="channel" href="#channel">Channel</a>
+        <a class="docs-side-link" data-doc="fflags" href="#fflags">FFlags</a>
+        <a class="docs-side-link" data-doc="http" href="#http">HTTP</a>
+        <a class="docs-side-link" data-doc="input" href="#input">Input</a>
+        <a class="docs-side-link" data-doc="messagebox" href="#messagebox">MessageBox</a>
+        <a class="docs-side-link" data-doc="oth" href="#oth">Oth</a>
+        <a class="docs-side-link" data-doc="physics" href="#physics">Physics</a>
+        <a class="docs-side-link" data-doc="raknet" href="#raknet">RakNet</a>
+        <a class="docs-side-link" data-doc="signal" href="#signal">Signal</a>
+      </div>
     </aside>
 
     <main class="docs-main">
@@ -55,12 +68,12 @@
       <section id="introduction" class="docs-section active">
         <h1 class="docs-title">sUNC Documentation</h1>
         <p class="docs-lead">
-          Relapse's API reference is related to and based exclusively on the official sUNC documentation.
+          Relapse's API reference covers the official sUNC surface plus the executor modules that Relapse adds on top.
         </p>
 
         <div class="docs-note">
           <h3>Official sUNC source</h3>
-          <p>Only APIs documented and actively tested by sUNC are listed here. The canonical reference is <a href="https://docs.sunc.su" target="_blank">docs.sunc.su</a>.</p>
+          <p>The sUNC categories follow the official reference at <a href="https://docs.sunc.su" target="_blank">docs.sunc.su</a>. The Relapse group documents modules that are specific to Relapse.</p>
         </div>
 
         <h2 class="docs-h2">Explore the sUNC reference</h2>
@@ -247,6 +260,146 @@
 
         <h3 class="docs-h3">Available functions</h3>
         <div class="docs-functions" data-category="websocket"></div>
+      </section>
+
+      <section id="actors" class="docs-section">
+        <p class="docs-breadcrumb"><span>Relapse</span><span class="sep">/</span><span>Actors</span></p>
+        <h2 class="docs-title-sm">Actors</h2>
+        <p class="docs-lead">Run code inside Actor VMs and communicate with them.</p>
+
+        <div class="docs-note">
+          <h3>Relapse specific</h3>
+          <p>These functions are provided by Relapse and are not part of the sUNC reference.</p>
+        </div>
+
+        <h3 class="docs-h3">Available functions</h3>
+        <div class="docs-functions" data-category="actors"></div>
+      </section>
+
+      <section id="channel" class="docs-section">
+        <p class="docs-breadcrumb"><span>Relapse</span><span class="sep">/</span><span>Channel</span></p>
+        <h2 class="docs-title-sm">Channel</h2>
+        <p class="docs-lead">Open cross-VM channels and exchange JSON values.</p>
+
+        <div class="docs-note">
+          <h3>Relapse specific</h3>
+          <p>These functions are provided by Relapse and are not part of the sUNC reference.</p>
+        </div>
+
+        <h3 class="docs-h3">Available functions</h3>
+        <div class="docs-functions" data-category="channel"></div>
+      </section>
+
+      <section id="fflags" class="docs-section">
+        <p class="docs-breadcrumb"><span>Relapse</span><span class="sep">/</span><span>FFlags</span></p>
+        <h2 class="docs-title-sm">FFlags</h2>
+        <p class="docs-lead">Read and write engine fast flags.</p>
+
+        <div class="docs-note">
+          <h3>Relapse specific</h3>
+          <p>These functions are provided by Relapse and are not part of the sUNC reference.</p>
+        </div>
+
+        <h3 class="docs-h3">Available functions</h3>
+        <div class="docs-functions" data-category="fflags"></div>
+      </section>
+
+      <section id="http" class="docs-section">
+        <p class="docs-breadcrumb"><span>Relapse</span><span class="sep">/</span><span>HTTP</span></p>
+        <h2 class="docs-title-sm">HTTP</h2>
+        <p class="docs-lead">Send HTTP requests from the executor.</p>
+
+        <div class="docs-note">
+          <h3>Relapse specific</h3>
+          <p>These functions are provided by Relapse and are not part of the sUNC reference.</p>
+        </div>
+
+        <h3 class="docs-h3">Available functions</h3>
+        <div class="docs-functions" data-category="http"></div>
+      </section>
+
+      <section id="input" class="docs-section">
+        <p class="docs-breadcrumb"><span>Relapse</span><span class="sep">/</span><span>Input</span></p>
+        <h2 class="docs-title-sm">Input</h2>
+        <p class="docs-lead">Synthesize mouse and keyboard input.</p>
+
+        <div class="docs-note">
+          <h3>Relapse specific</h3>
+          <p>These functions are provided by Relapse and are not part of the sUNC reference.</p>
+        </div>
+
+        <h3 class="docs-h3">Available functions</h3>
+        <div class="docs-functions" data-category="input"></div>
+      </section>
+
+      <section id="messagebox" class="docs-section">
+        <p class="docs-breadcrumb"><span>Relapse</span><span class="sep">/</span><span>MessageBox</span></p>
+        <h2 class="docs-title-sm">MessageBox</h2>
+        <p class="docs-lead">Show native message boxes.</p>
+
+        <div class="docs-note">
+          <h3>Relapse specific</h3>
+          <p>These functions are provided by Relapse and are not part of the sUNC reference.</p>
+        </div>
+
+        <h3 class="docs-h3">Available functions</h3>
+        <div class="docs-functions" data-category="messagebox"></div>
+      </section>
+
+      <section id="oth" class="docs-section">
+        <p class="docs-breadcrumb"><span>Relapse</span><span class="sep">/</span><span>Oth</span></p>
+        <h2 class="docs-title-sm">Oth</h2>
+        <p class="docs-lead">Hook C closures with Lua functions and inspect hook threads.</p>
+
+        <div class="docs-note">
+          <h3>Relapse specific</h3>
+          <p>These functions are provided by Relapse and are not part of the sUNC reference.</p>
+        </div>
+
+        <h3 class="docs-h3">Available functions</h3>
+        <div class="docs-functions" data-category="oth"></div>
+      </section>
+
+      <section id="physics" class="docs-section">
+        <p class="docs-breadcrumb"><span>Relapse</span><span class="sep">/</span><span>Physics</span></p>
+        <h2 class="docs-title-sm">Physics</h2>
+        <p class="docs-lead">Read and change the local physics time scale.</p>
+
+        <div class="docs-note">
+          <h3>Relapse specific</h3>
+          <p>These functions are provided by Relapse and are not part of the sUNC reference.</p>
+        </div>
+
+        <h3 class="docs-h3">Available functions</h3>
+        <div class="docs-functions" data-category="physics"></div>
+      </section>
+
+      <section id="raknet" class="docs-section">
+        <p class="docs-breadcrumb"><span>Relapse</span><span class="sep">/</span><span>RakNet</span></p>
+        <h2 class="docs-title-sm">RakNet</h2>
+        <p class="docs-lead">Inspect and inject network packets.</p>
+
+        <div class="docs-note">
+          <h3>Relapse specific</h3>
+          <p>These functions are provided by Relapse and are not part of the sUNC reference.</p>
+        </div>
+
+        <h3 class="docs-h3">Available functions</h3>
+        <div class="docs-functions" data-category="raknet"></div>
+      </section>
+
+      <section id="signal" class="docs-section">
+        <p class="docs-breadcrumb"><span>Relapse</span><span class="sep">/</span><span>Signal</span></p>
+        <h2 class="docs-title-sm">Signal</h2>
+        <p class="docs-lead">Create standalone signals and connections.</p>
+
+        <div class="docs-note">
+          <h3>Relapse specific</h3>
+          <p>These functions are provided by Relapse and are not part of the sUNC reference.</p>
+        </div>
+
+        <h3 class="docs-h3">Available functions</h3>
+        <div class="docs-functions" data-category="signal"></div>
       </section>
 
       <section id="function-view" class="docs-section">
